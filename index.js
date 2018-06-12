@@ -58,7 +58,7 @@ function generator ( config, options ) {
     var tasks = {},
         instance;
 
-    // sanitize
+    // sanitize and extend defaults
     config = Object.assign({
         port: 35729,
         watchOptions: {
