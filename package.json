@@ -1,6 +1,6 @@
 {
     "name": "@runner/generator-livereload",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Tasks generator for LiveReload.",
     "author": {
         "name": "Stanislav Kalashnik",
