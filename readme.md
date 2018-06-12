@@ -45,11 +45,11 @@ Object.assign(runner.tasks, tasks);
 
 The following tasks will become available:
 
- Task name            | Description
-----------------------|-------------
- `livereload:config`  | prints the current configuration used for generated tasks
- `livereload:watch`   | starts file changes monitoring, sends reload command on modifications
- `livereload:unwatch` | stops monitoring
+ Task name           | Description
+---------------------|-------------
+ `livereload:config` | prints the current configuration used for generated tasks
+ `livereload:start`  | starts file changes monitoring, sends reload command on modifications
+ `livereload:stop`   | stops watcher and server
 
 Generator accepts two arguments: base configuration and additional options.
 
@@ -88,8 +88,8 @@ Object.assign(runner.tasks,
 It will add the following tasks:
 
 * `lr:config:develop` 
-* `lr:watch:develop`  
-* `lr:unwatch:develop`  
+* `lr:start:develop`  
+* `lr:stop:develop`  
  
 
 ## Contribution ##

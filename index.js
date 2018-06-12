@@ -9,7 +9,7 @@ var name = 'livereload',
     log  = require('@runner/logger').wrap(name);
 
 
-function watch ( config, done ) {
+function start ( config, done ) {
     var chokidar = require('chokidar'),
         server   = require('tiny-lr')(),
         watcher;
@@ -45,7 +45,7 @@ function watch ( config, done ) {
 }
 
 
-function unwatch ( instance ) {
+function stop ( instance ) {
     if ( instance ) {
         instance.server.close();
         instance.watcher.close();
@@ -74,12 +74,12 @@ function generator ( config, options ) {
         log.inspect(config, log);
     };
 
-    tasks[options.prefix + 'watch' + options.suffix] = function ( done ) {
-        instance = watch(config, done);
+    tasks[options.prefix + 'start' + options.suffix] = function ( done ) {
+        instance = start(config, done);
     };
 
-    tasks[options.prefix + 'unwatch' + options.suffix] = function () {
-        unwatch(instance);
+    tasks[options.prefix + 'stop' + options.suffix] = function () {
+        stop(instance);
         instance = null;
     };
 
@@ -96,8 +96,8 @@ generator.options = {
 
 // export main actions
 generator.methods = {
-    watch: watch,
-    unwatch: unwatch
+    start: start,
+    stop: stop
 };
 
 
