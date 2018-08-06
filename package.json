@@ -1,5 +1,5 @@
 {
-    "name": "@runner/generator-livereload",
+    "name": "runner-generator-livereload",
     "version": "1.1.0",
     "description": "Tasks generator for LiveReload.",
     "author": {
@@ -10,16 +10,13 @@
         "type": "git",
         "url": "https://github.com/runner/generator-livereload.git"
     },
-    "publishConfig": {
-        "access": "public"
-    },
     "scripts": {
         "lint": "eslint .",
         "test": "npm run lint"
     },
     "dependencies": {
-        "@runner/logger": "^1.0.0",
         "chokidar": "^2.0.3",
+        "runner-logger": "^1.0.0",
         "tiny-lr": "^1.1.1"
     },
     "devDependencies": {

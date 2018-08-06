@@ -6,7 +6,7 @@
 'use strict';
 
 var name = 'livereload',
-    log  = require('@runner/logger').wrap(name);
+    log  = require('runner-logger').wrap(name);
 
 
 function start ( config, done ) {
