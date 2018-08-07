@@ -14,13 +14,13 @@ function start ( config, done ) {
         server   = require('tiny-lr')(),
         watcher;
 
-    function handler ( name ) {
+    function handler ( fileName ) {
         // reload
         server.changed({
-            body: {files: [name]}
+            body: {files: [fileName]}
         });
 
-        log.info('changed: %s', log.colors.magenta(name));
+        log.info('changed: %s', log.colors.magenta(fileName));
     }
 
     server.listen(config.port, function () {
