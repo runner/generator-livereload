@@ -1,6 +1,6 @@
 {
     "name": "runner-generator-livereload",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Tasks generator for LiveReload.",
     "author": {
         "name": "Stanislav Kalashnik",
@@ -15,8 +15,8 @@
         "test": "npm run lint"
     },
     "dependencies": {
-        "chokidar": "^2.0.3",
-        "runner-logger": "^1.0.0",
+        "chokidar": "^2.0.4",
+        "runner-logger": "^1.0.1",
         "tiny-lr": "^1.1.1"
     },
     "devDependencies": {
