@@ -59,7 +59,7 @@ function generator ( config, options ) {
         instance;
 
     // sanitize and extend defaults
-    config = Object.assign({
+    generator.config = config = Object.assign({
         port: 35729,
         watchOptions: {
             ignoreInitial: true,
