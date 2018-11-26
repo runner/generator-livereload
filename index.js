@@ -60,7 +60,6 @@ function generator ( config, options ) {
 
     // sanitize and extend defaults
     generator.config = config = Object.assign({
-        port: 35729,
         watchOptions: {
             ignoreInitial: true,
             awaitWriteFinish: {
@@ -68,6 +67,9 @@ function generator ( config, options ) {
             }
         }
     }, config || {});
+
+    config.port = config.port || 35729;
+
     options = Object.assign(generator.options, options || {});
 
     tasks[options.prefix + 'config' + options.suffix] = function () {
