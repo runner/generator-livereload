@@ -5,14 +5,16 @@
 
 'use strict';
 
-var name = 'livereload',
+const
+    name = 'livereload',
     log  = require('runner-logger').wrap(name);
 
 
 function start ( config, done ) {
-    var chokidar = require('chokidar'),
+    const
+        chokidar = require('chokidar'),
         server   = require('tiny-lr')(),
-        watcher;
+        watcher  = chokidar.watch(config.watch, config.watchOptions);
 
     function handler ( fileName ) {
         // reload
@@ -31,7 +33,6 @@ function start ( config, done ) {
         log.info('start server on port ' + config.port);
     });
 
-    watcher = chokidar.watch(config.watch, config.watchOptions);
     watcher
         .on('change', handler)
         .on('unlink', handler)
@@ -55,8 +56,9 @@ function stop ( instance ) {
 
 
 function generator ( config, options ) {
-    var tasks = {},
-        instance;
+    const tasks = {};
+
+    let instance;
 
     // sanitize and extend defaults
     generator.config = config = Object.assign({

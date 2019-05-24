@@ -21,13 +21,13 @@ npm install runner-generator-livereload
 Add to the scope:
 
 ```js
-var generator = require('runner-generator-livereload');
+const generator = require('runner-generator-livereload');
 ```
 
 Generate tasks according to the given config:
 
 ```js
-var tasks = generator({
+const tasks = generator({
     watch: [
         'build/develop/**/*',
         '!build/develop/**/*.map'
@@ -38,7 +38,7 @@ var tasks = generator({
 Add generated tasks to the `runner` instance:
 
 ```js
-var runner = require('runner');
+const runner = require('runner');
 
 Object.assign(runner.tasks, tasks);
 ```
