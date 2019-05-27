@@ -16,7 +16,7 @@
     },
     "dependencies": {
         "chokidar": "^3.0.0",
-        "runner-logger": "^1.0.1",
+        "runner-logger": "^2.0.0",
         "tiny-lr": "^1.1.1"
     },
     "devDependencies": {
